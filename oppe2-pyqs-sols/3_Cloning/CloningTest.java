@@ -39,8 +39,9 @@ class Author implements Cloneable {
     }
 
     // define method clone - defined for later use
-    public Author clone() throws CloneNotSupportedException{
-        return (Author)super.clone(); // clone method returns and object
+    //public return method name throw exceptino/exception name 
+    public Author clone() CloneNotSupportedException(){
+        return (Author)super.clone(); 
     }
 }
 
@@ -63,10 +64,11 @@ class Book implements Cloneable {
     }
 
     // define method clone - deep copy -> must handle private instances
-    public Book clone() throws CloneNotSupportedException{
-        Book b = (Book) super.clone(); // clones the book - shallow
-        b.author = this.author.clone(); // deep copy
+    public Book clone() throws CloneNotSupportedException(){
+        book b = (Book)super.clone();
+        b.author = this.author.clone();
         return b;
+    
     }
 }
 
