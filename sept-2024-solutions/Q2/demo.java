@@ -7,31 +7,30 @@
 import java.util.*;
 //DEFINE interface WearableGadget
 interface WearableGadget{
-    String showTime(); //public abstract
+    public abstract String showtime();
 }
 
 //DEFINE interface FitnessTracker
 interface FitnessTracker{
-    String trackSteps(); //public abstract
+    String trackSteps();
 }
 
 //DEFINE class SmartWatch
 class SmartWatch implements WearableGadget, FitnessTracker{
-    private String name;
+    private String name; 
 
-    //constructor
-    public SmartWatch(String n){
-        name = n;
+    public SmartWatch(String n) {
+        name = n ;
     }
 
     public String showTime(){
-        return name + " shows the current time";
+        return name + " shows the current time"
+    }
+    public String trackSteps(){
+        return name + " plays media"; 
     }
 
-    public String trackSteps(){
-        return name + " plays media";
-    }
-}
+}    
 
 class demo{
     public static void main(String[] args){
