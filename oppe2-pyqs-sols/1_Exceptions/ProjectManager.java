@@ -3,12 +3,10 @@ import java.util.*;
 
 // define class NoTeamMemberException - custom exception
 class NoTeamMemberException extends Exception{
-    // constructor - class Exception (superclass)
     public NoTeamMemberException(){
-        super();
+        super;
     }
 }
-
 class Project {
     private String projectName;
     private List<String> teamMembers;
@@ -37,18 +35,18 @@ class Project {
 
 public class ProjectManager {
     // define method updateProjectList
-    public static void updateProjectList(List<Project> projectList){
-        //iterate through the list of projects
-        for (Project project: projectList){
-            // check if the project has team members - might throw exception
+    public static void updateProjectList(List<Projects> projectList){
+        for(Project project : projectList){
             try{
                 project.hasTeamMembers();
-            } catch (NoTeamMemberException e){
-                //if exception, then add a default team member - addTeamMember
-                project.addTeamMember("Default Member");
+            }catch(NoTeamMemberException e){
+                project.addTeamMember(memberName:"Default Member");
             }
         }
     }
+        
+                
+                    
     public static void displayProjectList(List<Project> projectList) {
         System.out.println("Updated Project List:");
         for (Project project : projectList) {
