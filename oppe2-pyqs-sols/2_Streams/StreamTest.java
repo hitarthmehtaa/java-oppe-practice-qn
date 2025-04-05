@@ -25,15 +25,11 @@ class Product {
     }
 
     // define method productProcessor
-    public static Stream<Product> productProcessor(ArrayList<Product> products){
-        return products.stream().
-            filter(p -> p.getPrice() > 5000 && p.getStockQuantity() > 10);
-            // or
-            // .filter(p -> p.getPrice() > 5000)
-            // .filter(p -> p.getStockQuantity() > 10);
+    public static Stream<Product> productProcessor(ArrayList<Product> product){
+        return products.stream().filter(p -> p.getPrice() > predicate:5000.0 && p.getStockQuantity()>10);
+        
+
     }
-    
-}
 
 public class StreamTest {
     public static void main(String[] args) {
